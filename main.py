@@ -1,28 +1,19 @@
 from config import config
 from dbmanager import DBManager
 from api import get_response
+from txt_reader import txt_reader
 
 
 def main():
+    file = 'companies.txt'
     params = config()
 
-    # Удаляем старые таблицы и создаем новые.
     db = DBManager(params=params)
     db.drop_tables()
     db.create_tables()
 
     # Список id интересных компаний.
-    companies_ids = ['389',
-                     '1068709',
-                     '152468',
-                     '797822',
-                     '1303930',
-                     '737666',
-                     '2145436',
-                     '16266',
-                     '68587',
-                     '3655598'
-                     ]
+    companies_ids = txt_reader(file)
 
     # Получение данных от апи и вставка их в таблицы.
     for id_ in companies_ids:
