@@ -131,10 +131,11 @@ class DBManager:
             else:
                 salary_from, salary_to = vacancies['salary']['from'], vacancies['salary']['to']
 
-            cur.execute(""" INSERT INTO vacancies (company_id, vacancy_name, salary_from, salary_to, vacancy_url)
-                            VALUES (%s, %s, %s, %s, %s)""", (int(vacancies['employer']['id']),
-                                                             vacancies['name'],
-                                                             salary_from,
-                                                             salary_to,
-                                                             vacancies['alternate_url']
-                                                             ))
+            cur.execute("""
+            INSERT INTO vacancies (company_id, vacancy_name, salary_from, salary_to, vacancy_url)
+            VALUES (%s, %s, %s, %s, %s)""", (int(vacancies['employer']['id']),
+                                             vacancies['name'],
+                                             salary_from,
+                                             salary_to,
+                                             vacancies['alternate_url']
+                                             ))
