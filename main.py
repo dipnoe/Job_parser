@@ -1,7 +1,7 @@
-from config import config
-from dbmanager import DBManager
-from api import get_response
-from txt_reader import txt_reader
+from utils.config import config
+from utils.dbmanager import DBManager
+from utils.api import get_response
+from utils.txt_reader import txt_reader
 
 
 def main():
