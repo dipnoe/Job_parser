@@ -3,7 +3,7 @@ import psycopg2
 
 class DBManager:
     """
-    Класс для работы с базой данных
+    Класс для работы с базой данных.
     """
 
     def get_companies_and_vacancies_count(self) -> list[tuple]:
